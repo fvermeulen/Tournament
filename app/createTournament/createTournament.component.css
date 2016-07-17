@@ -1,0 +1,18 @@
+#playerList {
+  float: left;
+  background-color: lightgrey;
+  padding: 20px;
+}
+#player {
+  padding: 10px;
+}
+#addButton {
+  padding-left: 10px;
+}
+#resetTournamentButton {
+  padding-left: 10px;
+}
+#removeButton {
+  float: right;
+  padding-left: 10px;
+}

@@ -1,28 +1,17 @@
 import { Component }          from '@angular/core';
 
-import { Player } from './player/player';
-import { PlayerService } from './service/player.service';
-import { CreateTournament } from './createTournament/createTournament.component';
+import { Player } from '../player/player';
+import { PlayerService } from '../service/player.service';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app/app.component.html',
-  styleUrls: ['app/app.component.css'],
-  providers: [
-    PlayerService
-  ]
+  selector: 'createTournament',
+  templateUrl: 'app/createTournament.component.html',
+  styleUrls: ['app/createTournament.component.css']
 })
-export class AppComponent {
-  title = 'Tournament';
-  // createTournament;
-  //
-  // constructor(
-  //   private createTournament: CreateTournament) {
-  //   createTournament = createTournament;
-  // }
+export class CreateTournament {
   playerName = '';
   playerList: Player[] = [];
-
+  
   constructor(
     private playerService: PlayerService) {
   }
