@@ -6,4 +6,13 @@ import { Component }          from '@angular/core';
 })
 export class AppComponent {
   title = 'Tournament';
+  playerName = '';
+  playerList: string[] = [];
+
+  addPlayer() {
+    if (this.playerName.trim()) {
+      this.playerList.push(this.playerName.trim());
+      this.playerName = '';
+    }
+  }
 }

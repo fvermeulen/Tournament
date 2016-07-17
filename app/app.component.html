@@ -1,1 +1,7 @@
 <h1>{{title}}</h1>
+<input [(ngModel)]="playerName" (keyup.enter)="addPlayer()">
+<button (click)="addPlayer()">Add player</button>
+
+<div *ngFor="let player of playerList" mySpy class="player">
+    {{player}}
+</div>

@@ -12,7 +12,15 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tournament';
+        this.playerName = '';
+        this.playerList = [];
     }
+    AppComponent.prototype.addPlayer = function () {
+        if (this.playerName.trim()) {
+            this.playerList.push(this.playerName.trim());
+            this.playerName = '';
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
