@@ -1,14 +1,6 @@
 <h1>{{title}}</h1>
-<input [(ngModel)]="playerName" (keyup.enter)="addPlayer()" placeholder="playerName">
-<button (click)="addPlayer()" id="addButton">Add player</button>
-<button (click)="resetTournament()" id="resetTournamentButton">Reset tournament</button>
-
-<p></p>
-<div id="playerList">
-  <div *ngFor="let player of playerList" mySpy id="player">
-      Player-Id: {{player.id}}  --- Name: {{player.name}}
-      <div id="removeButton">
-        <button (click)='removePlayer(player)'>Remove</button>
-      </div>
-  </div>
-</div>
+<nav>
+  <a [routerLink]="['/newTournament']" routerLinkActive="active">New tournament</a>
+  <a [routerLink]="['/tournament']" routerLinkActive="active">tournament</a>
+</nav>
+<router-outlet></router-outlet>

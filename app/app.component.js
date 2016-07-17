@@ -9,46 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var player_service_1 = require('./service/player.service');
 var AppComponent = (function () {
-    function AppComponent(playerService) {
-        this.playerService = playerService;
+    function AppComponent() {
         this.title = 'Tournament';
-        // createTournament;
-        //
-        // constructor(
-        //   private createTournament: CreateTournament) {
-        //   createTournament = createTournament;
-        // }
-        this.playerName = '';
-        this.playerList = [];
     }
-    AppComponent.prototype.addPlayer = function () {
-        var _this = this;
-        this.playerService.addPlayer(this.playerName);
-        this.playerName = '';
-        this.playerService.getPlayerList().then(function (players) { return _this.playerList = players; });
-    };
-    AppComponent.prototype.removePlayer = function (player) {
-        var _this = this;
-        this.playerService.removePlayer(player);
-        this.playerService.getPlayerList().then(function (players) { return _this.playerList = players; });
-    };
-    AppComponent.prototype.resetTournament = function () {
-        var _this = this;
-        this.playerService.resetTournament();
-        this.playerService.getPlayerList().then(function (players) { return _this.playerList = players; });
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['app/app.component.css'],
-            providers: [
-                player_service_1.PlayerService
-            ]
+            directives: [router_1.ROUTER_DIRECTIVES],
+            providers: [player_service_1.PlayerService]
         }), 
-        __metadata('design:paramtypes', [player_service_1.PlayerService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

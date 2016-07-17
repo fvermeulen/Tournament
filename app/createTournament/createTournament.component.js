@@ -16,6 +16,10 @@ var CreateTournament = (function () {
         this.playerName = '';
         this.playerList = [];
     }
+    CreateTournament.prototype.ngOnInit = function () {
+        var _this = this;
+        this.playerService.getPlayerList().then(function (players) { return _this.playerList = players; });
+    };
     CreateTournament.prototype.addPlayer = function () {
         var _this = this;
         this.playerService.addPlayer(this.playerName);
@@ -35,8 +39,8 @@ var CreateTournament = (function () {
     CreateTournament = __decorate([
         core_1.Component({
             selector: 'createTournament',
-            templateUrl: 'app/createTournament.component.html',
-            styleUrls: ['app/createTournament.component.css']
+            templateUrl: 'app/createTournament/createTournament.component.html',
+            styleUrls: ['app/createTournament/createTournament.component.css']
         }), 
         __metadata('design:paramtypes', [player_service_1.PlayerService])
     ], CreateTournament);
