@@ -1,7 +1,14 @@
 <h1>{{title}}</h1>
-<input [(ngModel)]="playerName" (keyup.enter)="addPlayer()">
-<button (click)="addPlayer()">Add player</button>
+<input [(ngModel)]="playerName" (keyup.enter)="addPlayer()" placeholder="playerName">
+<button (click)="addPlayer()" id="addButton">Add player</button>
+<button (click)="resetTournament()" id="resetTournamentButton">Reset tournament</button>
 
-<div *ngFor="let player of playerList" mySpy class="player">
-    Player-Id: {{player.id}}  --- Name: {{player.name}}
+<p></p>
+<div id="playerList">
+  <div *ngFor="let player of playerList" mySpy id="player">
+      Player-Id: {{player.id}}  --- Name: {{player.name}}
+      <div id="removeButton">
+        <button (click)='removePlayer(player)'>Remove</button>
+      </div>
+  </div>
 </div>

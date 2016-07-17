@@ -20,15 +20,31 @@ var AppComponent = (function () {
     AppComponent.prototype.addPlayer = function () {
         var name = this.playerName.trim();
         if (name) {
+            if (!this.playerList.length) {
+                this.playerId = 0;
+            }
             this.playerId++;
             this.playerList.push(new player_1.Player(this.playerId, name));
             this.playerName = '';
         }
     };
+    AppComponent.prototype.removePlayer = function (player) {
+        var index = this.playerList.indexOf(player);
+        if (index == null) {
+            //player not found
+            return;
+        }
+        this.playerList.splice(index, 1);
+    };
+    AppComponent.prototype.resetTournament = function () {
+        this.playerList = [];
+        this.playerId = 0;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/app.component.html'
+            templateUrl: 'app/app.component.html',
+            styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
