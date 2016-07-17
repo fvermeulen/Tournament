@@ -9,15 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var player_1 = require('./player/player');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tournament';
+        this.playerId = 0;
         this.playerName = '';
         this.playerList = [];
     }
     AppComponent.prototype.addPlayer = function () {
-        if (this.playerName.trim()) {
-            this.playerList.push(this.playerName.trim());
+        var name = this.playerName.trim();
+        if (name) {
+            this.playerId++;
+            this.playerList.push(new player_1.Player(this.playerId, name));
             this.playerName = '';
         }
     };

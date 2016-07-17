@@ -3,5 +3,5 @@
 <button (click)="addPlayer()">Add player</button>
 
 <div *ngFor="let player of playerList" mySpy class="player">
-    {{player}}
+    Player-Id: {{player.id}}  --- Name: {{player.name}}
 </div>
