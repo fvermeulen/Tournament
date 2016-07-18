@@ -31,6 +31,10 @@ var Tournament = (function () {
             }
         }
     };
+    Tournament.prototype.addFirstResult = function () {
+    };
+    Tournament.prototype.addSecondResult = function () {
+    };
     Tournament = __decorate([
         core_1.Component({
             selector: 'tournament',

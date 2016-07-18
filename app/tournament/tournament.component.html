@@ -2,12 +2,18 @@
 
 <div id="roundList">
   <div *ngFor="let round of rounds" mySpy id="rounds">
+    <tournament-round [round]=round></tournament-round>
+    <ng-content></ng-content>
     <p></p>
       Round
       <div id="round">
         {{round.firstPlayer.id}} {{round.firstPlayer.name}}
         <br>
         {{round.secondPlayer.id}} {{round.secondPlayer.name}}
+        <br>
+        <h4>Result:</h4>
+        <input [(ngModel)]="firstValue" (keyup.enter)="addFirstResult()" placeholder="0">
+        <input [(ngModel)]="secondValue" (keyup.enter)="addSecondResult()" placeholder="0">
       </div>
   </div>
 </div>

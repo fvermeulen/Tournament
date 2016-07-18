@@ -12,6 +12,8 @@ import { PlayerService } from '../service/player.service';
 export class Tournament implements OnInit {
   playerList: Player[] = [];
   rounds: Round[] = [];
+  firstValue: number;
+  secondValue: number;
 
   constructor(
     private playerService: PlayerService) {
@@ -29,5 +31,13 @@ export class Tournament implements OnInit {
         }
       }
     }
+  }
+
+  addFirstResult() {
+
+  }
+
+  addSecondResult() {
+
   }
 }
