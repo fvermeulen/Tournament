@@ -1,4 +1,5 @@
 import { Component, OnInit }          from '@angular/core';
+import { Router }           from '@angular/router';
 
 import { Player } from '../player/player';
 import { PlayerService } from '../service/player.service';
@@ -11,8 +12,10 @@ import { PlayerService } from '../service/player.service';
 export class CreateTournament implements OnInit {
   playerName = '';
   playerList: Player[] = [];
+  isCreationDoneInvisible = true;
 
   constructor(
+    private router: Router,
     private playerService: PlayerService) {
   }
 
@@ -21,6 +24,7 @@ export class CreateTournament implements OnInit {
   }
 
   addPlayer() {
+    this.isCreationDoneInvisible = false;
     this.playerService.addPlayer(this.playerName);
     this.playerName = '';
     this.playerService.getPlayerList().then(players => this.playerList = players);
@@ -34,5 +38,10 @@ export class CreateTournament implements OnInit {
   resetTournament() {
     this.playerService.resetTournament();
     this.playerService.getPlayerList().then(players => this.playerList = players);
+  }
+
+  creationDone() {
+    let link = ['/tournament'];
+    this.router.navigate(link);
   }
 }

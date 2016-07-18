@@ -1,0 +1,13 @@
+<h2>Tournament los</h2>
+
+<div id="roundList">
+  <div *ngFor="let round of rounds" mySpy id="rounds">
+    <p></p>
+      Round
+      <div id="round">
+        {{round.firstPlayer.id}} {{round.firstPlayer.name}}
+        <br>
+        {{round.secondPlayer.id}} {{round.secondPlayer.name}}
+      </div>
+  </div>
+</div>
